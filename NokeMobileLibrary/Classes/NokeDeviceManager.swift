@@ -156,7 +156,11 @@ public class NokeDeviceManager: NSObject, CBCentralManagerDelegate, NokeDeviceDe
     fileprivate var apiKey: String = ""
     
     /// CBCentralManager
-    public lazy var cm: CBCentralManager = CBCentralManager(delegate: self, queue:nil)
+    public lazy var cm: CBCentralManager = CBCentralManager(
+        delegate: self,
+        queue: nil,
+        options: [CBCentralManagerOptionShowPowerAlertKey: false]
+    )
     
     /// Shared instance of NokeDeviceManager
     static var sharedNokeDeviceManager: NokeDeviceManager?
@@ -185,7 +189,11 @@ public class NokeDeviceManager: NSObject, CBCentralManagerDelegate, NokeDeviceDe
      */
     override init(){
         super.init()
-        cm = CBCentralManager.init(delegate: self, queue: nil)
+        cm = CBCentralManager(
+            delegate: self,
+            queue: nil,
+            options: [CBCentralManagerOptionShowPowerAlertKey: false]
+        )
     }
     
     
