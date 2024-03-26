@@ -236,7 +236,7 @@ public class NokeDeviceManager: NSObject, CBCentralManagerDelegate, NokeDeviceDe
      */
     public func connectToNokeDevice(_ noke:NokeDevice){
         self.insertNokeDevice(noke)
-        let connectionOptions : [String: AnyObject] = [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber.init(value: true as Bool)]
+        let connectionOptions : [String: AnyObject] = [CBConnectPeripheralOptionNotifyOnDisconnectionKey: NSNumber.init(value: false as Bool)]
         if (noke.peripheral != nil){
             nokeDevicePendingToConnect = nil
             invalidateConnectionTimer()
